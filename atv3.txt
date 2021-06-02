@@ -20,7 +20,7 @@ end//
 delimiter ; 
 
 select fn_adicionar_aluno (null, '2002-12-2', 60, 8.75, 'jamanta campos', 'jamampos@gmail.com')
-as 'nom_alun' ;
+as 'nome_aluno' ;
 
 /
 /*02) Desenvolva um procedimento em MYSQL que imprima a sequênciade 5 números utilizando a 
@@ -30,12 +30,12 @@ estrutura de repetição WHILE, saída esperada abaixo.
 delimiter 
 create procedure sqc_numero ()
 begin
-    declare limite integer default 5;
-    declare contador integer default 1;
+    declare limit integer default 5;
+    declare counter integer default 1;
     declare str varchar(60) default '1';
-    while contador<limite do
-        set contador = contador + 1 ;
-        set str = concat(str, ',', contador );
+    while counter<limite do
+        set counter = counter + 1 ;
+        set str = concat(str, ',', counter );
     end while;
     select concat(str,',') as 'str' ;
 end 
@@ -49,13 +49,13 @@ números de 1 a 9 (função concatenar em MySQL “CONCAT”);*/
 delimiter |
 create procedure sqc_numero_nove ()
 begin
-    declare contador integer default 1;
-    declare limite integer default 9;
+    declare counter integer default 1;
+    declare limit integer default 9;
     declare result varchar(60) default '1';
     repeat 
-        set contador = contador + 1 ;
-        set result = concat(result, ',', contador );
-    until contador >= limite
+        set counter = contador + 1 ;
+        set result = concat(result, ',', counter );
+    until counter >= limite
     end repeat;
     select concat(result,',') as 'result' ;
 end |
